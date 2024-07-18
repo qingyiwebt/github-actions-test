@@ -21,18 +21,21 @@ jobs:
         with:
           name: r1
           path: 'outputs/'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download r2
         uses: actions/download-artifact@v4
         with:
           name: r2
           path: 'outputs/'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download r3
         uses: actions/download-artifact@v4
         with:
           name: r3
           path: 'outputs/'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Show me result
         run: |
