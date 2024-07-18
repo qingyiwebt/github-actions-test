@@ -20,10 +20,10 @@ jobs:
         uses: actions/upload-artifact@v3.1.2
         with:
           name: r1
-          path: ${{github.workspace}}/r1
+          path: ${{github.workspace}}/r1.txt
 
       - name: Upload Artifact (r2)
         uses: actions/upload-artifact@v3.1.2
         with:
           name: r2
-          path: ${{github.workspace}}/r2
+          path: ${{github.workspace}}/r2.txt
