@@ -1,0 +1,22 @@
+name: Reused-2
+
+on:
+  workflow_call: {}
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Generate result
+        run: |
+          echo 3 > r3.txt
+
+      - name: Upload Artifact (r3)
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: r3
+          path: ${{github.workspace}}/r3.txt
