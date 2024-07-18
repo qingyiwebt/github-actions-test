@@ -21,6 +21,7 @@ jobs:
         with:
           name: r1
           path: 'outputs/'
+          run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download r2
@@ -28,6 +29,7 @@ jobs:
         with:
           name: r2
           path: 'outputs/'
+          run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download r3
@@ -35,6 +37,7 @@ jobs:
         with:
           name: r3
           path: 'outputs/'
+          run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Show me result
