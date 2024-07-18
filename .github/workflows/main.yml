@@ -17,28 +17,25 @@ jobs:
     needs: ['reused-1', 'reused-2']
     steps:
       - name: Download r1
-        uses: actions/download-artifact@v4
+        uses: dawidd6/action-download-artifact@v6
         with:
           name: r1
+          run_id: ${{ github.event.workflow_run.id }}
           path: 'outputs/'
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
+          
       - name: Download r2
-        uses: actions/download-artifact@v4
+        uses: dawidd6/action-download-artifact@v6
         with:
           name: r2
+          run_id: ${{ github.event.workflow_run.id }}
           path: 'outputs/'
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
+          
       - name: Download r3
-        uses: actions/download-artifact@v4
+        uses: dawidd6/action-download-artifact@v6
         with:
           name: r3
+          run_id: ${{ github.event.workflow_run.id }}
           path: 'outputs/'
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Show me result
         run: |
