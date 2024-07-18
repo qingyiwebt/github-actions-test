@@ -20,21 +20,18 @@ jobs:
         uses: dawidd6/action-download-artifact@v6
         with:
           name: r1
-          run_id: ${{ github.event.workflow_run.id }}
           path: 'outputs/'
           
       - name: Download r2
         uses: dawidd6/action-download-artifact@v6
         with:
           name: r2
-          run_id: ${{ github.event.workflow_run.id }}
           path: 'outputs/'
           
       - name: Download r3
         uses: dawidd6/action-download-artifact@v6
         with:
           name: r3
-          run_id: ${{ github.event.workflow_run.id }}
           path: 'outputs/'
 
       - name: Show me result
