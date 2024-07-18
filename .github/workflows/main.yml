@@ -16,10 +16,23 @@ jobs:
     runs-on: ubuntu-latest
     needs: ['reused-1', 'reused-2']
     steps:
-      - name: Download all workflow run artifacts
+      - name: Download r1
         uses: actions/download-artifact@v4
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          name: r1
+          path: 'outputs/'
+
+      - name: Download r2
+        uses: actions/download-artifact@v4
+        with:
+          name: r2
+          path: 'outputs/'
+
+      - name: Download r3
+        uses: actions/download-artifact@v4
+        with:
+          name: r3
+          path: 'outputs/'
 
       - name: Show me result
         run: |
